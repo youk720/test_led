@@ -21,6 +21,10 @@ if(e.keyCode === 70) {
   }
 });
 
+/* 参考サイト
+  https://teratail.com/questions/89507
+*/
+
 let m = [];
 let x = $('input[name=led_select]').change(function(){
   $('input[name=led_select]:checked').each(function(){
