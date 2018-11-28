@@ -17,7 +17,7 @@ GPIO.output(led, GPIO.LOW)
 GPIO.output(led_2, GPIO.LOW)
 
 # IPアドレス定義
-ip = 'http://10.3.100.116:8000/led'
+ip = 'http://xxxxxx:8000/led'
 # コマンド定義
 cmd = "curl -X GET %s" % (ip)
 
