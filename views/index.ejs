@@ -12,18 +12,24 @@
     <p>Welcome to <%= title %></p> -->
     <div>
       <form id="sw">
-        <button id="on" style='font-size:38px;' class="btn btn-danger btn-lg  text-center"><strong> ON </strong></button>
-      <br>
-      <button id="off" style='font-size:30px;' class="btn btn-success btn-lg"><strong>OFF</strong></button>
+        <!-- 以下,view_index_2.js有効にして実行してください -->
+        <!-- <button id="on" style='font-size:38px;' class="btn btn-danger btn-lg  text-center"><strong> ON </strong></button>
+        <br>
+        <button id="off" style='font-size:30px;' class="btn btn-success btn-lg"><strong>OFF</strong></button> -->
+
+      <!-- 以下,view_index.js有効にして実行してください -->
+        <input id="led_1" type="checkbox" name="led_select" value="led_1=True">LED_1
+        <input id="led_2" type="checkbox" name="led_select" value="led_2=True">LED_2
+        <br>
+        <input type="submit" id="send" class="btn btn-danger btn-lg  text-center btn-lg" value="発 信">
+        <br>
+        <button id="off" style='font-size:30px;' class="btn btn-success"><strong>OFF</strong></button>
     </form>
     </div>
     <!-- https://digital-marketing.jp/seo/spam-hidden-text/ -->
-    <!--  -->
-    <p id="result" style="display: none;"></p>
-    <script type="text/javascript" src="javascripts/view_index.js"></script>
+    <!-- <script type="text/javascript" src="javascripts/view_index.js"></script> -->
+    <script type="text/javascript" src="javascripts/view_index_2.js"></script>
 
-    <!-- <script>
-    var socket = io();
-    </script> -->
+
   </body>
 </html>

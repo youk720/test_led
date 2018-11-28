@@ -34,10 +34,10 @@ function on(){
   // socketで元々あった、値を消す
   socket.emit("sw status", '');
   // 新しく発光するよう叩く
-  socket.emit("sw status", "led=True");
+  socket.emit("sw status", "led_1=True");
 }
 function off(){
   // 同上
   socket.emit("sw status", '');
-  socket.emit("sw status", "led=False");
+  socket.emit("sw status", "led_1=False");
 }

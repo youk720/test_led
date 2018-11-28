@@ -2,12 +2,10 @@
 import subprocess
 import RPi.GPIO as GPIO
 import time
-import os
-import sys
 
 # LEDピン設定
-led = 17
-led_2 = 27
+led = 27
+led_2 = 17
 
 #GPIO各種設定
 GPIO.setmode(GPIO.BCM)
@@ -35,23 +33,32 @@ try:
         # resultのデバック用出力
         # print('\n' + "result: " + result)
 
-        # LED発光のためのif文
-        # if (A) in B:のような書き方で,Bの中にAが含まれているかを判定し,Trueの場合if文以下のコードを実行
-        if 'led=True' in result:
+        if 'led_1=True' in result and 'led_2=True' in result:
             GPIO.output(led, GPIO.HIGH)
-
+            GPIO.output(led_2, GPIO.HIGH)
             # if文入っているかのデバック用
-            # print("\n" + "hoge_1")
+            print("\n" + "hoge_3")
         # LED発光のためのif文
-        elif 'led=False' in result:
+        # if (A) in B:のような書き方で,Bの中にAが含まれているかを判定し,Trueの場合,if文以下インデントのコードを実行
+        elif 'led_1=True' in result:
+            GPIO.output(led, GPIO.HIGH)
+            GPIO.output(led_2, GPIO.LOW)
+            # if文入っているかのデバック用
+            print("\n" + "hoge_1")
+        # LED発光のためのif文
+        elif 'led_2=True' in result:
             GPIO.output(led, GPIO.LOW)
+            GPIO.output(led_2, GPIO.HIGH)
 
             # if文入っているかのデバック用
-            # print("\n" + "hoge_2")
+            print("\n" + "hoge_2")
 
-        # 特に書くこともないので通過
+        # それ以外の操作で、LEDを切る
         else:
-            pass
+            GPIO.output(led, GPIO.LOW)
+            GPIO.output(led_2, GPIO.LOW)
+            # if文入っているかのデバック用
+            print("\n" + "hoge_4")
 
 # Curl + Cで終了させた時の処理
 except KeyboardInterrupt:
