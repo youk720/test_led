@@ -29,7 +29,7 @@ let m = [];
 let x = $('input[name=led_select]').change(function(){
   $('input[name=led_select]:checked').each(function(){
     m.push($(this).val());
-  }).eq(0).change();
+  });
 });
 
 function sub_send(){
